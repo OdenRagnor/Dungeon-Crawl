@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Arcade Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 🛡️ DUNGEON CRAWLER VIEW -->
+    <div id="dungeon-view" class="game-view">
+        <div id="dungeon-board">
+            
+            <!-- Header & Stats -->
+            <div id="dungeon-header" style="flex-direction: column; align-items: stretch;">
+                <div style="display: flex; justify-content: space-between;">
+                    <h3>Room <span id="room-display">1</span> / ??</h3>
+                    <h3>Lvl <span id="hero-lvl">1</span></h3>
+                </div>
+                <!-- Inside #dungeon-header -->
+                <div id="hero-stats" style="font-size: 14px; text-align: center;">
+                    <span style="color:#ffb8b8;">XP: <span id="hero-xp">0</span>/<span id="hero-xp-needed">10</span></span> | 
+                    <span style="color:gold;">Gold: <span id="hero-gold">0</span></span><br>
+                    
+                    <!-- HERO HP TEXT AND BAR -->
+                    <div style="margin: 5px 0;">
+                        <span style="color:#ff6b81;">HP: <span id="hero-hp">50</span>/<span id="hero-maxhp">50</span></span>
+                        <div style="width: 100%; background-color: #333; height: 10px; border-radius: 5px; margin-top: 3px;">
+                            <div id="hero-hp-bar" style="width: 100%; background-color: #2ed573; height: 100%; border-radius: 5px; transition: width 0.3s ease, background-color 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    
+                    <span style="color:#1e90ff;">Focus: <span id="hero-focus">3</span>/<span id="hero-maxfocus">3</span></span><br>
+                    <span style="color:#2ed573;">🌿: <span id="hero-pots">2</span></span> | 
+                    <span style="color:#2ed573;">🧪: <span id="hero-pots2">0</span></span> | 
+                    <span style="color:#2ed573;">🏺: <span id="hero-pots3">0</span></span> |
+                    <span style="color:#2ed573;">💖: <span id="hero-pots4">0</span></span> |
+                    <span style="color:#2ed573;">💖🌿: <span id="hero-pots5">0</span></span> |
+                    <span style="color:#2ed573;">💖🧪: <span id="hero-pots6">0</span></span> 
+                </div>
+
+                <!-- Battle Arena -->
+                <div id="battle-arena">
+                    <div id="hero-sprite" class="rpg-entity hero-alive">Kn</div>
+                    <div id="enemy-sprite" class="rpg-entity enemy-alive" style="display: none;">Gob</div>
+                </div>
+
+                <!-- ENEMY HP TEXT AND BAR -->
+                <div id="enemy-stats" style="display: none; text-align: center; font-weight: bold; margin-top: 10px;">
+                    <h4 id="enemy-name" style="margin: 5px 0;">Goblin</h4>
+                    <span style="color:#ff6b81;">HP: <span id="enemy-hp">15</span></span>
+                    <div style="width: 120px; background-color: #333; height: 10px; border-radius: 5px; margin: 5px auto;">
+                        <div id="enemy-hp-bar" style="width: 100%; background-color: #ff4757; height: 100%; border-radius: 5px; transition: width 0.3s ease;"></div>
+                    </div>
+                </div>
+
+            <!-- Combat Console -->
+            <div id="combat-log">You enter the dark dungeon...</div>
+
+            <!-- Action Menu -->
+            <div id="action-menu" style="padding: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; background-color: #1a252f;">
+                <button id="btn-attack">Attack</button>
+                <button id="btn-slow" style="background-color: #ffc31e;" title="Slow Attack - A weak attack that garenties you another attack, skipping the enemies next turn. Cost 1 Focus point.">Slow Attack</button>
+                <button id="btn-focus" title="Focus Attack - Increases your success chance by one point, on a perfect hit the attack causes the ememy to flinch which skips their next turn. Cost 1 Focus point.">Focus</button>
+                
+                <!-- Three distinct heal buttons -->
+                <button id="btn-heal-1" style="background-color: #2ed573; color: #111; font-weight: bold;" title="Godbeard - Heals for 15 HP">🌿</button>
+                <button id="btn-heal-2" style="background-color: #2ed573; color: #111; font-weight: bold;" title="Super Godbeard - Heals for 30 HP">🧪</button>
+                <button id="btn-heal-3" style="background-color: #2ed573; color: #111; font-weight: bold;" title="Ultra Godbeard - Heals for 50 HP">🏺</button>
+                <button id="btn-heal-4" style="background-color: #2ed573; color: #111; font-weight: bold;" title="Super Ultra Godbeard - Heals for 100 HP">💖</button>
+                <button id="btn-heal-5" style="background-color: #2ed573; color: #111; font-weight: bold;"title="Super Supreme Ultra Godbeard - Heals for 150 HP">💖🌿</button>
+                <button id="btn-heal-6" style="background-color: #2ed573; color: #111; font-weight: bold;"title="Hyper Supreme Ultra Godbeard - Heals for 200 HP">💖🧪</button>
+                <button id="btn-next-room" style="display: none; background-color: #1e90ff; width: 100%;">Enter Next Room</button>
+            </div>
+
+            <!-- Shop Menu -->
+            <div id="shop-menu" style="display: none; padding: 10px; text-align: center; background-color: #1a252f;">
+                <h4 style="margin: 0 0 10px 0; color: gold;">Traveling Merchant</h4>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-bottom: 10px;">
+                    <button id="btn-buy-pot" title="Godbeard - Heals for 15 HP">🌿(25g)</button>
+                    <button id="btn-buy-pot2" title="Super Godbeard - Heals for 30 HP">🧪(35g)</button>
+                    <button id="btn-buy-pot3" title="Ultra Godbeard - Heals for 50 HP">🏺(60g)</button>
+                    <button id="btn-buy-pot4" style="display: none;" title="Super Ultra Godbeard - Heals for 100 HP">💖(100g)</button>
+                    <button id="btn-buy-pot5" style="display: none;" title="Super Supreme Ultra Godbeard - Heals for 150 HP">💖🌿(140g)</button>
+                    <button id="btn-buy-pot6" style="display: none;" title="Hyper Supreme Ultra Godbeard - Heals for 200 HP">💖🧪(190g)</button>
+                    <button id="btn-buy-focus">💧 Restore 1 Focus (10g)</button>
+                </div>
+                <button id="btn-leave-shop" style="background-color: #1e90ff;">Leave Shop</button>
+            </div>
+        </div>
+        
+        <div id="dungeon-game-over" class="overlay" style="display: none;">
+            <h2 id="dungeon-message">Your Party has Fallen</h2>
+            <button id="dungeon-restart-btn">Try Again</button>
+        </div>
+        <button id="pip-toggle-btn">📺 Play in Picture-in-Picture</button>
+    </div>
+
+    <script src="scripts2.js"></script>
+</body>
+</html>
