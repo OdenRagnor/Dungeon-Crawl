@@ -100,4 +100,5 @@ button:active { transform: scale(0.95); }
 
 #dungeon-view {
     background-image: url("Sprites/Background.png");
+    z-index: 1;
 }
