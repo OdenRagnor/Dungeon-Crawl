@@ -69,7 +69,14 @@ body {
 
 #hero-hp-container,
 #enemy-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+#hero-name,
+#enemy-name {
+  margin: 0; /* removes default h4 spacing */
+  line-height: 1; /* keeps text height consistent */
+}
+
