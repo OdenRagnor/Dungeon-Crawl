@@ -61,10 +61,10 @@ body {
 }
 
 #hp-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* forces same vertical alignment */
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* or center if you prefer */
+  width: 100%;
 }
 
 #hero-hp-container,
@@ -72,12 +72,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  vertical-align: middle;
+  min-height: 80px; /* ensures equal vertical footprint */
 }
 
 #hero-name,
 #enemy-name {
-  margin: 0; /* removes default h4 spacing */
-  line-height: 1; /* keeps text height consistent */
+  margin: 0;
+  line-height: 1.2;
+}
+
+#hero-hp-container span,
+#enemy-stats span {
+  display: inline-block;
+  min-height: 20px; /* equalizes text height */
 }
 
