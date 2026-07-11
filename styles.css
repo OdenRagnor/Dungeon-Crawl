@@ -57,7 +57,7 @@ button:active { transform: scale(0.95); }
 #dungeon-header {
     background-color: #1a252f; padding: 10px; display: flex; 
     justify-content: space-between; align-items: center; border-bottom: 2px solid #555;
-    background-image: url("Sprites/Background");
+    background-image: url("Sprites/Background.png");
 }
 
 #battle-arena {
