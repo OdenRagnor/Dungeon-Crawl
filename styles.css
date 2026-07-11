@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif; display: flex; flex-direction: column;
     align-items: center; background-color: #222; color: white; margin: 0; padding: 20px;
-    background-image: url("Sprites/Background");
 }
 
 /* --- Navigation & Overlays --- */
@@ -62,6 +61,7 @@ button:active { transform: scale(0.95); }
 #battle-arena {
     display: flex; justify-content: space-around; align-items: center; 
     height: 150px; padding: 0 50px;
+    background-image: url("Sprites/Background");
 }
 
 .rpg-entity {
