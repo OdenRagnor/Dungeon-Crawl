@@ -36,7 +36,7 @@ body {
 #enemy-stats { text-align: center; margin-bottom: 10px; font-weight: bold; }
 
 #combat-log {
-    background-color: #111; height: 60px; width: 100%; padding: 10px; font-family: monospace;
+    background-color: #1111114b; height: 60px; width: 100%; padding: 10px; font-family: monospace;
     overflow-y: auto; border-top: 2px solid #555; border-bottom: 2px solid #555;
     color: #f1c40f;
 }
