@@ -59,3 +59,17 @@ body {
 .damage-flash {
   animation: flash-damage 0.2s ease-out;
 }
+
+#hp-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* forces same vertical alignment */
+    width: 100%;
+}
+
+#hero-hp-container,
+#enemy-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
