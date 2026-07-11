@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif; display: flex; flex-direction: column;
     align-items: center; background-color: #222; color: white; margin: 0; padding: 20px;
+    background-image: url("Sprites/Background");
 }
 
 /* --- Navigation & Overlays --- */
