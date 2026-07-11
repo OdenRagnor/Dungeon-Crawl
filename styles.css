@@ -3,49 +3,6 @@ body {
     align-items: center; background-color: #222; color: white; margin: 0; padding: 20px;
 }
 
-/* --- Navigation & Overlays --- */
-#nav-bar { margin-bottom: 20px; display: flex; gap: 10px; }
-#nav-bar button { background-color: #555; }
-#nav-bar button.active-nav { background-color: #1e90ff; box-shadow: 0 0 10px #1e90ff; }
-.game-view { display: flex; flex-direction: column; align-items: center; position: relative; }
-.overlay {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.9); padding: 30px; border: 2px solid white;
-    text-align: center; border-radius: 10px; z-index: 100;
-}
-button {
-    padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #ff4757;
-    color: white; border: none; border-radius: 5px; transition: transform 0.1s;
-}
-button:active { transform: scale(0.95); }
-#game-board, #snake-board, #invaders-board {
-    width: 600px; height: 400px; background-color: #111; position: relative;
-    overflow: hidden; border: 2px solid #555; margin-bottom: 20px;
-}
-
-/* --- Evasion & Snake Styles (Retained) --- */
-#player { width: 30px; height: 30px; background-color: #2ed573; position: absolute; box-shadow: 0 0 10px #2ed573; }
-.enemy { width: 25px; height: 25px; position: absolute; }
-#slash { position: absolute; background-color: white; box-shadow: 0 0 15px white; border-radius: 10px; z-index: 10; }
-.snake-segment { width: 20px; height: 20px; background-color: #2ed573; position: absolute; border: 1px solid #111; box-sizing: border-box; }
-.snake-head { background-color: #1abc9c; }
-.snake-food { width: 20px; height: 20px; background-color: #ff4757; position: absolute; border-radius: 50%; box-shadow: 0 0 10px #ff4757; }
-
-/* --- NEW: Space Invaders Styles --- */
-#invader-player {
-    width: 40px; height: 20px; background-color: #1e90ff;
-    position: absolute; bottom: 10px; border-radius: 5px 5px 0 0;
-    box-shadow: 0 0 10px #1e90ff;
-}
-.invader-alien {
-    width: 25px; height: 25px; background-color: #ffa502;
-    position: absolute; border-radius: 4px;
-}
-.invader-laser {
-    width: 4px; height: 15px; background-color: #2ed573;
-    position: absolute; box-shadow: 0 0 8px #2ed573;
-}
-
 /* --- 🛡️ NEW: Dungeon Crawler Styles --- */
 #dungeon-board {
     width: 550px; height: 500px; background-color: #2c3e5000; 
