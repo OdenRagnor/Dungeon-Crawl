@@ -60,7 +60,3 @@ body {
   animation: flash-damage 0.2s ease-out;
 }
 
-#enemy-stats {
-    position: relative;
-    right: 10px;
-}
