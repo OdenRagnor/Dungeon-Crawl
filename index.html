@@ -38,7 +38,14 @@
                     <span style="color:#2ed573;">💖🌿: <span id="hero-pots5">0</span></span> |
                     <span style="color:#2ed573;">💖🧪: <span id="hero-pots6">0</span></span> 
                 </div>
-
+                <div class="entity-block">
+                    <div id="hero" class="rpg-entity hero-alive">H</div>
+                    <div id="hero-stats" class="entity-stats">
+                        <span style="color:#ffb8b8;">XP: <span id="hero-xp">0</span>/<span id="hero-xp-needed">10</span></span>
+                        |
+                        <span style="color:gold;">Gold: <span id="hero-gold">0</span></span>
+                    </div>
+                </div>
                 <!-- Battle Arena -->
                 <div id="battle-arena">
                     <div id="hero-sprite" class="rpg-entity hero-alive">Kn</div>
@@ -53,7 +60,12 @@
                         <div id="enemy-hp-bar" style="width: 100%; background-color: #ff4757; height: 100%; border-radius: 5px; transition: width 0.3s ease;"></div>
                     </div>
                 </div>
-
+                <div class="entity-block">
+                    <div id="enemy" class="rpg-entity enemy-alive">E</div>
+                    <div id="enemy-stats" class="entity-stats">
+                        <span style="color:#ffb8b8;">HP: <span id="enemy-hp">10</span></span>
+                    </div>
+                </div>
             <!-- Combat Console -->
             <div id="combat-log">You enter the dark dungeon...</div>
 
