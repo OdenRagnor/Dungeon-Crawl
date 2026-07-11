@@ -97,3 +97,7 @@ button:active { transform: scale(0.95); }
 .damage-flash {
   animation: flash-damage 0.2s ease-out;
 }
+
+#dungeon-view {
+    background-image: url("Sprites/Background.png");
+}
